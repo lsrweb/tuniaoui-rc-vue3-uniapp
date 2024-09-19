@@ -19,10 +19,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tuniaoTech/tuniaoui-rc-vue3-uniapp"
+    "url": "https://github.com/lsrweb/tuniaoui-rc-vue3-uniapp.git"
   },
   "bugs": {
-    "url": "https://github.com/tuniaoTech/tuniaoui-rc-vue3-uniapp/issues"
+    "url": "https://github.com/lsrweb/tuniaoui-rc-vue3-uniapp.git/issues"
   },
   "peerDependencies": {
     "@tuniao/tn-icon": "^1.4.0",
