@@ -1,17 +1,16 @@
 <script lang="ts" setup>
-import { titleEmits, titleProps } from './title'
-import { useTitleCustomStyle } from './composables'
+  import { titleEmits, titleProps } from "./title";
+  import { useTitleCustomStyle } from "./composables";
 
-const props = defineProps(titleProps)
-const emits = defineEmits(titleEmits)
+  const props = defineProps(titleProps);
+  const emits = defineEmits(titleEmits);
 
-const { ns, titleClass, titleStyle, assistColorClass, assistColorStyle } =
-  useTitleCustomStyle(props)
+  const { ns, titleClass, titleStyle, assistColorClass, assistColorStyle } = useTitleCustomStyle(props);
 
-// 标题点击事件
-const titleClickEvent = () => {
-  emits('click')
-}
+  // 标题点击事件
+  const titleClickEvent = () => {
+    emits("click");
+  };
 </script>
 
 <template>
@@ -34,9 +33,13 @@ const titleClickEvent = () => {
         </template>
       </view>
     </view>
+
+    <text class="assist">
+      <slot name="assist"></slot>
+    </text>
   </view>
 </template>
 
 <style lang="scss" scoped>
-@import '../../../theme-chalk/src/title.scss';
+  @import "../../../theme-chalk/src/title.scss";
 </style>

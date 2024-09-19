@@ -1,10 +1,10 @@
-import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '../../../constants'
-import { buildProps, definePropType, isNumber, isString } from '../../../utils'
-import { tabsBaseProps } from '../../base/common-props/tabs'
+import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from "../../../constants";
+import { buildProps, definePropType, isNumber, isString } from "../../../utils";
+import { tabsBaseProps } from "../../base/common-props/tabs";
 
-import type { ExtractPropTypes } from 'vue'
+import type { ExtractPropTypes } from "vue";
 
-export type TabsSwitchBeforeFunc = (index: number) => Promise<boolean> | boolean
+export type TabsSwitchBeforeFunc = (index: number) => Promise<boolean> | boolean;
 
 export const tabsProps = buildProps({
   ...tabsBaseProps,
@@ -13,21 +13,28 @@ export const tabsProps = buildProps({
    */
   modelValue: {
     type: [String, Number],
-    default: 0,
+    default: 0
   },
   /**
    * @description tabs高度
    */
   height: {
     type: String,
-    default: '80rpx',
+    default: "80rpx"
   },
   /**
    * @description 滑块的宽度
    */
   barWidth: {
     type: String,
-    default: '40rpx',
+    default: "40rpx"
+  },
+  /**
+   * @description 滑块的高度
+   */
+  barHeight: {
+    type: String,
+    default: "4rpx"
   },
   /**
    * @description 背景颜色，以tn开头时使用图鸟内置的颜色
@@ -42,49 +49,48 @@ export const tabsProps = buildProps({
    */
   bottomShadow: {
     type: Boolean,
-    default: true,
+    default: true
   },
   /**
    * @description 是否可以滚动
    */
   scroll: {
     type: Boolean,
-    default: true,
+    default: true
   },
   /**
    * @description 是否显示滑块
    */
   bar: {
     type: Boolean,
-    default: true,
+    default: true
   },
   /**
    * @description 选中后的字体是否加粗
    */
   activeBold: {
     type: Boolean,
-    default: true,
+    default: true
   },
   /**
    * @description 距离顶部的距离，默认单位 px
    */
   offsetTop: {
     type: Number,
-    default: 0,
+    default: 0
   },
   /**
    * @description 切换前回调
    */
   beforeSwitch: {
-    type: definePropType<TabsSwitchBeforeFunc>(Function),
-  },
-})
+    type: definePropType<TabsSwitchBeforeFunc>(Function)
+  }
+});
 
 export const tabsEmits = {
-  [UPDATE_MODEL_EVENT]: (val: string | number) =>
-    isString(val) || isNumber(val),
-  [CHANGE_EVENT]: (val: string | number) => isString(val) || isNumber(val),
-}
+  [UPDATE_MODEL_EVENT]: (val: string | number) => isString(val) || isNumber(val),
+  [CHANGE_EVENT]: (val: string | number) => isString(val) || isNumber(val)
+};
 
-export type TabsProps = ExtractPropTypes<typeof tabsProps>
-export type TabsEmits = typeof tabsEmits
+export type TabsProps = ExtractPropTypes<typeof tabsProps>;
+export type TabsEmits = typeof tabsEmits;

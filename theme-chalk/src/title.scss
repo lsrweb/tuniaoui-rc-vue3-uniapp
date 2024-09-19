@@ -1,23 +1,23 @@
-@use 'sass:map';
+@use "sass:map";
 
-@use '../mixins/mixins.scss' as *;
-@use '../var/size.scss' as *;
+@use "../mixins/mixins.scss" as *;
+@use "../var/size.scss" as *;
 
 $title-sizes: () !default;
 $title-sizes: map-merge(
   (
-    'sm': (
-      'font-size': 24rpx,
+    "sm": (
+      "font-size": 24rpx
     ),
-    '': (
-      'font-size': 28rpx,
+    "": (
+      "font-size": 28rpx
     ),
-    'lg': (
-      'font-size': 32rpx,
+    "lg": (
+      "font-size": 32rpx
     ),
-    'xl': (
-      'font-size': 38rpx,
-    ),
+    "xl": (
+      "font-size": 38rpx
+    )
   ),
   $title-sizes
 );
@@ -26,16 +26,19 @@ $title-sizes: map-merge(
   position: relative;
   // width: 100%;
   height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   /* 标题内容 start */
   @include e(title) {
     position: relative;
     width: fit-content;
-    font-size: map-get(map-get($title-sizes, ''), 'font-size');
+    font-size: map-get(map-get($title-sizes, ""), "font-size");
     /* 尺寸 start */
     @each $size in $tn-inner-sizes {
       @include m($size) {
-        font-size: map-get(map-get($title-sizes, $size), 'font-size');
+        font-size: map-get(map-get($title-sizes, $size), "font-size");
       }
     }
     /* 尺寸 end */
@@ -102,4 +105,8 @@ $title-sizes: map-merge(
     white-space: nowrap;
   }
   /* 辅助元素 end */
+}
+/* as start */
+text.assist {
+  font-size: 24rpx;
 }
