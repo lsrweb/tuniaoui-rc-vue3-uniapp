@@ -39,6 +39,10 @@ $tn-form-font-sizes: map-merge(
   @include e(label) {
     flex-shrink: 0;
     padding: 0rpx 16rpx 0rpx 0rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
     /* 必选项星号 start */
     @include m(asterisk-left) {
       &::before {

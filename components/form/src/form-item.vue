@@ -113,6 +113,11 @@ defineExpose({
         <slot name="label">
           {{ currentLabel }}
         </slot>
+
+         <!-- special label text on the right, only in top mode -->
+        <view class="tn-form-item__label-slot" v-if="props.labelPosition === 'top' || formContext?.labelPosition === 'top'">
+          <slot name="label-slot" />
+        </view>
       </view>
       <!-- 表单组件 -->
       <view :class="[formItemNs.e('content')]">
